@@ -9,6 +9,8 @@ import com.example.networkmodule.continuation.ContinuationPOC
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.coroutines.Continuation
 
 class CRActivity : AppCompatActivity() {
@@ -18,6 +20,14 @@ class CRActivity : AppCompatActivity() {
         lifecycleScope.launch {
             ContinuationPOC().renderImage()
         }
+
+        var list = Collections.synchronizedList<Int>(object:ArrayList<Int?>(){
+            init {
+                add(1)
+            }
+        })
+
+
 
     }
 
